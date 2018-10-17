@@ -48,7 +48,7 @@ var p = new Person();
 
 var p2 = new Person2();
 
-interface ICarInfo{
+interface ICarInfo {
     mileage: number;
     wheelBase: number;
     manufacturer: string;
@@ -61,7 +61,7 @@ class Car {
     public carData: ICarInfo = {
         mileage: 20,
         wheelBase: 170,
-        manufacturer:'tata'
+        manufacturer: 'tata'
     }
 
     //constructor 
@@ -77,3 +77,26 @@ class Car {
 var carObj = new Car("Engine 1");
 console.log('carname' + carObj.carName);
 console.log('carname' + carObj.engine);
+carObj.disp();
+
+class Animal {
+    name: string;
+    constructor(theName: string) { this.name = theName; }
+    move(distanceInMeters: number = 0) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+        console.log(this.name + ' moved ' + distanceInMeters + 'm.');
+    }
+}
+
+class Snake extends Animal {
+    constructor(name: string) { super(name); }
+    move(distanceInMeters = 5) {
+        console.log("Slithering..." + this.name);
+        super.move(distanceInMeters);
+    }
+}
+
+let sam = new Snake("Sammy the Python");
+
+sam.move(10);
+
