@@ -3,12 +3,12 @@ let x = 1;
 var y = 1;
 let c: string = 'hello';
 
-interface Person {
+interface IPerson {
     firstName: string;
     lastName: string;
 }
 
-function greeter(person: Person) {
+function greeter(person: IPerson) {
     return "Hello, " + person.firstName + " " + person.lastName + person.gender;
 }
 
@@ -47,3 +47,33 @@ function Person2() {
 var p = new Person();
 
 var p2 = new Person2();
+
+interface ICarInfo{
+    mileage: number;
+    wheelBase: number;
+    manufacturer: string;
+}
+
+class Car {
+    //field 
+    private engine: string;
+    public carName = 'ford';
+    public carData: ICarInfo = {
+        mileage: 20,
+        wheelBase: 170,
+        manufacturer:'tata'
+    }
+
+    //constructor 
+    constructor(engine: string) {
+        this.engine = engine
+    }
+
+    //function 
+    disp(): void {
+        console.log("Engine is  :   " + this.engine)
+    }
+}
+var carObj = new Car("Engine 1");
+console.log('carname' + carObj.carName);
+console.log('carname' + carObj.engine);
